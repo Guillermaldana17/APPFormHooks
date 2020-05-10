@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Formulario from './components/Formulario'
+import Solicitud from './components/Solicitud';
+import Listado from './components/Listado'
 
 function App() {
+  const [Entradas, setEntradas] = useState([]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-sm-6 mt-2'>
+            <Formulario></Formulario>
+          </div>
+          <div className='col-sm-6 mt-2'>
+            <Solicitud
+              Entradas={Entradas}
+              setEntradas={setEntradas}
+            >
+            </Solicitud>
+            <Listado
+              Entradas={Entradas}>
+            </Listado>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
