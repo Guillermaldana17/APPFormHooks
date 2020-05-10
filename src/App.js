@@ -4,6 +4,7 @@ import Solicitud from './components/Solicitud';
 import SolicitudEdit from './components/Solicitud';
 import Listado from './components/Listado'
 import { v4 as uuidv4 } from 'uuid';
+import Encabezado from './components/Encabezado';
 
 function App() {
   const [Entradas, setEntradas] = useState([
@@ -41,6 +42,9 @@ function App() {
     <div className="App">
       <div className='container-fluid'>
         <div className='row'>
+          <div className='col-sm-12'>
+          <Encabezado></Encabezado>
+          </div>
           <div className='col-sm-4 mt-2'>
             <Solicitud
               addSolicitud={addSolicitud}
