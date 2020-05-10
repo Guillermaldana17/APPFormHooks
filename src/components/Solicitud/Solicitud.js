@@ -4,16 +4,16 @@ import { useForm } from "react-hook-form";
 
 const Solicitud = (props) => {
     const { register, errors, handleSubmit } = useForm();
-    const {setEntradas} = props;
+    const {addSolicitud} = props;
  
     const onSubmit = (data, e) => {
         console.log(data)
-        setEntradas(
-            [data]
-        );
+        addSolicitud(data)
+        
         e.target.reset(); /* Limpio Formulario */
+        
     }
-
+    
     return (
         <div className='card'>
             <div className='card-header'>
